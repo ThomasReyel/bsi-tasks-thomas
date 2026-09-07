@@ -14,6 +14,7 @@
 
 ## Questão 04
 **Resposta:** 
+
 A) Atomicidade, pois as operações são encadeadas e a falha de uma delas deveria resultar na falha do processo inteiro. Então em um SGBD competente, nesse tipo de situação apenas não teria completado a operação de débito da conta.
 
 B) Isolamento, pois, em um SGBD as 2 operações não iriam interferir uma na outra até que uma fosse confirmada. Então assim que o primeiro débito fosse confirmado, a segunda operação ia ser cancelada.
@@ -23,6 +24,7 @@ C) Durabilidade, o SGBD do cenário em questão, deveria garantir que toda e qua
 D) Consistência, pois, no cenário em questão o SGBD impediu que uma regra fosse quebrada, assim garantido a consistência do banco.
 
 ## Questão 05
+**Resposta:**
 
 - **Capacidade:** é a proficiência em restaurar o banco a um estado consistente após falhas (queda de energia, erro de hardware e etc). O SGBD gerencia isso através de logs de transações (write-ahead logging), pontos de verificação (checkpoints) e mecanismos de backup.
 
@@ -31,3 +33,24 @@ D) Consistência, pois, no cenário em questão o SGBD impediu que uma regra fos
 - **Redundância:** Ocorre quando o mesmo dado é armazenado em múltiplos lugares desnecessariamente, desperdiçando espaço e aumentando o risco de inconsistência. O SGBD reduz isso por meio de normalização do esquema, organizando os dados em tabelas relacionadas em vez de duplicá-los.
 
 - **Inconsistência:** Acontece quando dados redundantes não são atualizados de forma sincronizada, gerando informações conflitantes (ex.: o mesmo endereço de cliente diferente em duas tabelas). O SGBD evita isso controlando a redundância (normalização) e aplicando integridade referencial, além de mecanismos de controle de concorrência (locks, transações ACID que já foram ditas) que garantem atualizações coordenadas.
+
+## Questão 06
+**Resposta:**
+
+- **A empresa possui equipes**, essas equipes tem: departamento, código e quantidade de funcionários.
+- **Uma equipe possui vários funcionários**, que tem: nome, cpf, data de nascimento, salário, email e função.
+- **Uma equipe resolve várias tarefas**, essas tarefas possuem: tipo, código, data de início e data final programada.
+- **Uma tarefa pertence a um sprint**, esse projeto tem: código data de início anterior à data de término.
+- **Uma sprint pertence a uma release**, essas releases tem: código, nome e data de término
+- **Uma release pertence a um projeto**, esse projeto tem: Código,orçamento,data de início e data final programada e data de término.
+- **Um projeto tem um cliente**, esse cliente tem: Nome, tipo, cnpj (ou cpf, vai depender do tipo), email e telefone.
+Regras:
+
+- Um funcionário só pode estar em uma equipe por vez
+- Um cliente pode ter vários projetos
+- Toda tarefa precisa estar vinculada a um projeto
+- Um funcionário precisa estar vinculado a uma equipe
+- As equipes podem trabalhar em tarefas de projetos diferentes
+- Caso um cliente seja do tipo pessoa física, ela não pode ter CNPJ
+- Toda squad deve ter exatamente um líder técnico, um supervisor e um gerente de produto.
+- A função do funcionário pode ser desenvolvedores, testadores, líder técnico, supervisor e gerente de produto
