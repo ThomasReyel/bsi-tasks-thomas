@@ -21,3 +21,13 @@ B) Isolamento, pois, em um SGBD as 2 operações não iriam interferir uma na ou
 C) Durabilidade, o SGBD do cenário em questão, deveria garantir que toda e qualquer operação confirmada esteja salva.
 
 D) Consistência, pois, no cenário em questão o SGBD impediu que uma regra fosse quebrada, assim garantido a consistência do banco.
+
+## Questão 05
+
+- **Capacidade:** é a proficiência em restaurar o banco a um estado consistente após falhas (queda de energia, erro de hardware e etc). O SGBD gerencia isso através de logs de transações (write-ahead logging), pontos de verificação (checkpoints) e mecanismos de backup.
+
+- **Integridade:** Ela garante que os dados armazenados sejam válidos e consistentes com as regras do negócio (ex.: um CPF não pode ser nulo, uma idade não pode ser negativa). O SGBD gerencia isso por meio de restrições (constraints) como chaves primárias, chaves estrangeiras, regras de domínio, triggers e validações definidas no esquema.
+
+- **Redundância:** Ocorre quando o mesmo dado é armazenado em múltiplos lugares desnecessariamente, desperdiçando espaço e aumentando o risco de inconsistência. O SGBD reduz isso por meio de normalização do esquema, organizando os dados em tabelas relacionadas em vez de duplicá-los.
+
+- **Inconsistência:** Acontece quando dados redundantes não são atualizados de forma sincronizada, gerando informações conflitantes (ex.: o mesmo endereço de cliente diferente em duas tabelas). O SGBD evita isso controlando a redundância (normalização) e aplicando integridade referencial, além de mecanismos de controle de concorrência (locks, transações ACID que já foram ditas) que garantem atualizações coordenadas.
