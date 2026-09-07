@@ -24,6 +24,7 @@ C) Durabilidade, o SGBD do cenário em questão, deveria garantir que toda e qua
 D) Consistência, pois, no cenário em questão o SGBD impediu que uma regra fosse quebrada, assim garantido a consistência do banco.
 
 ## Questão 05
+
 **Resposta:**
 
 - **Capacidade:** é a proficiência em restaurar o banco a um estado consistente após falhas (queda de energia, erro de hardware e etc). O SGBD gerencia isso através de logs de transações (write-ahead logging), pontos de verificação (checkpoints) e mecanismos de backup.
@@ -44,7 +45,8 @@ D) Consistência, pois, no cenário em questão o SGBD impediu que uma regra fos
 - **Uma sprint pertence a uma release**, essas releases tem: código, nome e data de término
 - **Uma release pertence a um projeto**, esse projeto tem: Código,orçamento,data de início e data final programada e data de término.
 - **Um projeto tem um cliente**, esse cliente tem: Nome, tipo, cnpj (ou cpf, vai depender do tipo), email e telefone.
-Regras:
+
+### Regras:
 
 - Um funcionário só pode estar em uma equipe por vez
 - Um cliente pode ter vários projetos
