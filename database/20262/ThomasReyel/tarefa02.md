@@ -9,3 +9,11 @@ Atributos: São características comuns a instâncias das entidades. São dividi
 
 Relacionamento: são a forma e a quantidade na qual as entidades se relacionam entre si. pra ver a cardinalidade sempre se pergunte "1 instância dessa está em quantas instâncias da outra". OBS: Na cardinalidade a relação só é total quando não existe a opção de uma instância de relacionar. E parcial se possuir a opção de uma instância se relacionar.
 
+## Questão 2
+**Resposta:**
+
+- Notação de Chen: Criada por Peter Chen (o pioneiro do modelo), utiliza formas geométricas distintas para cada elemento.
+- Notação Pé de Galinha (Crow's Foot): Focada na legibilidade, posiciona os atributos dentro do bloco da entidade e utiliza símbolos 
+na extremidade das linhas. Essa é a notação utilizada no mermaid, por exemplo.
+- Notação UML: Adaptada da orientação a objetos, utiliza caixas de classes para representar entidades e multiplicidades numéricas.
+
