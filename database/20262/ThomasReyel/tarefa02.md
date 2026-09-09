@@ -17,3 +17,72 @@ Relacionamento: são a forma e a quantidade na qual as entidades se relacionam e
 na extremidade das linhas. Essa é a notação utilizada no mermaid, por exemplo.
 - Notação UML: Adaptada da orientação a objetos, utiliza caixas de classes para representar entidades e multiplicidades numéricas.
 
+## Questão 3
+**Resposta: **
+
+```mermaid
+erDiagram
+
+CLIENTE{
+
+  int id
+  string código
+  string nome
+  string email
+}
+
+FUNCIONÁRIO{
+
+  int id
+  string código
+  string nome
+  string email
+  string função
+}
+
+TAREFA{
+
+  int id
+  string código
+  string descrição
+  string prioridade
+  string situação
+  string horas
+}
+
+SPRINT {
+
+  int id
+  int numero
+  date data_inicio
+  date data_final
+}
+
+RELEASE {
+
+  int id
+  string versão
+  date data_planejada
+}
+EQUIPE{
+
+  int id
+  string nome
+}
+
+PROJETO{
+
+  int id
+  string código
+  date data_inicio
+  date data_final
+}
+
+FUNCIONÁRIO }|--|| EQUIPE : trabalha
+TAREFA }|--|| EQUIPE : resolve
+TAREFA }|--|| PROJETO : pertence
+EQUIPE ||--|{ SPRINT : possui
+TAREFA }|--|| RELEASE : agrupa
+RELEASE }|--|| PROJETO : possui
+CLIENTE ||--|{ PROJETO : possui
+```
