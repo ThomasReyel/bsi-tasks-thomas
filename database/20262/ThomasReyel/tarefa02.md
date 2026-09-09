@@ -85,6 +85,8 @@ EQUIPE ||--|{ SPRINT : possui
 TAREFA }|--|| RELEASE : agrupa
 RELEASE }|--|| PROJETO : possui
 CLIENTE ||--|{ PROJETO : possui
+SPRINT ||--|{ TAREFA : contém
+PROJETO ||--|{ SPRINT : possui
 ```
 
 ## Questão 04
@@ -114,6 +116,7 @@ TAREFA{
   int id_equipe FK
   int id_projeto FK
   int id_release FK
+  int id_sprint FK
   string código
   string descrição
   string prioridade
@@ -124,6 +127,7 @@ TAREFA{
 SPRINT {
   int id PK
   int id_equipe FK
+  int id_projeto FK
   int numero
   date data_inicio
   date data_final
@@ -156,7 +160,18 @@ EQUIPE ||--|{ SPRINT : possui
 TAREFA }|--|| RELEASE : agrupa
 RELEASE }|--|| PROJETO : possui
 CLIENTE ||--|{ PROJETO : possui
+SPRINT ||--|{ TAREFA : contém
+PROJETO ||--|{ SPRINT : possui
 ```
 
+## Questão 05
+**Resposta:**
 
-
+- Um cliente não pode ser excluído se ainda houver projetos ativos vinculados a ele.
+- Uma tarefa não pode ser excluída se já estiver associada a uma release publicada.
+- Uma release só pode ser publicada se todas as tarefas vinculadas a ela estiverem concluídas.
+- Toda squad deve ter exatamente um líder técnico e um gerente de produto.
+- Um funcionário só pode estar em uma equipe por vez.
+- Um sprint deve ter data de início anterior à data de término.
+- uma tarefa só pode existir vinculada a um projeto de cliente existente.
+- A TAREFA.id_projeto deve ser consistente com a RELEASE.id_projeto referenciada pela mesma tarefa (ou seja, uma tarefa não pode estar associada a uma release de um projeto diferente do associado a release).
