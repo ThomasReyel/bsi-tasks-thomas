@@ -86,3 +86,77 @@ TAREFA }|--|| RELEASE : agrupa
 RELEASE }|--|| PROJETO : possui
 CLIENTE ||--|{ PROJETO : possui
 ```
+
+## Questão 04
+**Resposta:**
+
+```mermaid
+erDiagram
+
+CLIENTE{
+  int id PK
+  string código
+  string nome
+  string email
+}
+
+FUNCIONÁRIO{
+  int id PK
+  int id_equipe FK
+  string código
+  string nome
+  string email
+  string função
+}
+
+TAREFA{
+  int id PK
+  int id_equipe FK
+  int id_projeto FK
+  int id_release FK
+  string código
+  string descrição
+  string prioridade
+  string situação
+  string horas
+}
+
+SPRINT {
+  int id PK
+  int id_equipe FK
+  int numero
+  date data_inicio
+  date data_final
+}
+
+RELEASE {
+  int id PK
+  int id_projeto FK
+  string versão
+  date data_planejada
+}
+
+EQUIPE{
+  int id PK
+  string nome
+}
+
+PROJETO{
+  int id PK
+  int id_cliente FK
+  string código
+  date data_inicio
+  date data_final
+}
+
+FUNCIONÁRIO }|--|| EQUIPE : trabalha
+TAREFA }|--|| EQUIPE : resolve
+TAREFA }|--|| PROJETO : pertence
+EQUIPE ||--|{ SPRINT : possui
+TAREFA }|--|| RELEASE : agrupa
+RELEASE }|--|| PROJETO : possui
+CLIENTE ||--|{ PROJETO : possui
+```
+
+
+
