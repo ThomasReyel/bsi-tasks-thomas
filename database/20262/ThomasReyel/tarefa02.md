@@ -174,4 +174,4 @@ PROJETO ||--|{ SPRINT : possui
 - Um funcionário só pode estar em uma equipe por vez.
 - Um sprint deve ter data de início anterior à data de término.
 - uma tarefa só pode existir vinculada a um projeto de cliente existente.
-- A TAREFA.id_projeto deve ser consistente com a RELEASE.id_projeto referenciada pela mesma tarefa (ou seja, uma tarefa não pode estar associada a uma release de um projeto diferente do associado a release).
+- O id_projeto de TAREFA deve ser consistente com a id_projeto de RELEASE referenciada pela mesma tarefa (ou seja, uma tarefa não pode estar associada a uma release de um projeto diferente do associado a release).
